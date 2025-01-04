@@ -7,7 +7,7 @@ def navigate_file():
         print("File not found. Please check the filename and try again.")
         return
 
-line_count = len(lines)
+    line_count = len(lines)
     print(f"The file contains {line_count} lines.")
 
     while True:
@@ -16,3 +16,12 @@ line_count = len(lines)
             if line_number == 0:
                 print("Exiting program.")
                 break
+            elif 1 <= line_number <= line_count:
+                print(lines[line_number - 1].strip())
+            else:
+                print(f"Invalid line number. Please enter a number between 1 and {line_count}.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+if __name__ == "__main__":
+    navigate_file()
